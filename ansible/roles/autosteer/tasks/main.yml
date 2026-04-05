@@ -62,17 +62,6 @@
     state: absent
     path: /home/pi/autosteer/simplesteer/frontend
 
-- name: Run npm ci in the frontend folder.
-  ansible.builtin.command:
-    cmd: npm ci
-    chdir: ../../frontend
-  delegate_to: localhost
-  
-- name: Run npm build in the frontend folder.
-  ansible.builtin.command:
-    cmd: npm run build
-    chdir: ../../frontend
-  delegate_to: localhost
   
 - name: Copy simplesteer frontend
   ansible.builtin.copy:

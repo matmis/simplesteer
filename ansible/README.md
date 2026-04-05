@@ -5,7 +5,7 @@
 - backend/config.js
 
 ### Flash raspbian on sd card
-Tested with raspbian with Debian 10 (2021-05-07-raspios-buster-arm64-lite)
+Tested with raspbian with Debian 13 (2025-12-04-raspios-trixie-arm64-lite)
 
 ### Install your ssh key
 ```
