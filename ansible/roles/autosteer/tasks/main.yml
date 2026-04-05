@@ -46,6 +46,13 @@
     src: ../../../../backend
     dest: /home/pi/autosteer/simplesteer
 
+
+- name: Install node-gyp globally
+  become: true
+  ansible.builtin.npm:
+    name: node-gyp
+    global: yes
+
 - name: Install backend packages based on package.json.
   community.general.npm:
     path: /home/pi/autosteer/simplesteer/backend
