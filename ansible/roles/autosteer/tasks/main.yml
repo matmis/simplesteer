@@ -46,6 +46,13 @@
     src: ../../../../backend
     dest: /home/pi/autosteer/simplesteer
 
+
+- name: Install node-gyp globally
+  become: true
+  ansible.builtin.npm:
+    name: node-gyp
+    global: yes
+
 - name: Install backend packages based on package.json.
   community.general.npm:
     path: /home/pi/autosteer/simplesteer/backend
@@ -55,17 +62,6 @@
     state: absent
     path: /home/pi/autosteer/simplesteer/frontend
 
-- name: Run npm ci in the frontend folder.
-  ansible.builtin.command:
-    cmd: npm ci
-    chdir: ../../frontend
-  delegate_to: localhost
-  
-- name: Run npm build in the frontend folder.
-  ansible.builtin.command:
-    cmd: npm run build
-    chdir: ../../frontend
-  delegate_to: localhost
   
 - name: Copy simplesteer frontend
   ansible.builtin.copy:
